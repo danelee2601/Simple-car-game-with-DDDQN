@@ -16,7 +16,7 @@ MAX_EPISODE = 1000000
 TRAIN_INTERVAL = 2  # 1일때가 학습이 더 잘되는거같기도 한데..  # predictNN 을 train 시키는 interval (not targetNN) 하지만, 이 정책에서는 targetNN 도 같이 update 한다.
 
 # 학습 데이터를 어느정도 쌓은 후, 일정 시간 이후에 학습을 시작하도록 합니다.
-OBSERVE = 1000
+OBSERVE = 200
 
 # action: 0: 좌, 1: 유지, 2: 우
 NUM_ACTION = 3
@@ -155,7 +155,7 @@ def replay():
 
 
 # 'Execute
-train_replay_option = 'train'
+train_replay_option = 'replay'
 
 if train_replay_option == 'train':
     train()
