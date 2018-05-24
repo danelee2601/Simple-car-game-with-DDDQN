@@ -117,7 +117,7 @@ class DQN:
         with tf.variable_scope(name):
 
             # Weight initializer
-            he_init = tf.contrib.layers.variance_scaling_initializer(factor=2.0, mode='FAN_IN', uniform=False)
+            he_init = tf.contrib.layers.variance_scaling_initializer(factor=2.0, mode='FAN_AVG', uniform=False) # 'FAN_AVG'-mode-he-init -> works better than 'FAN'
 
             # The size of the final layer before splitting it into Advantage and Value streams.
             h_size = 500
